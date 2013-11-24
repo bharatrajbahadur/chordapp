@@ -1,0 +1,26 @@
+from django.template import Template, Context
+
+<!--Insert if statemtents within the template-->
+<!--TEMPLATE SHOULD NOT BE SAVED AS AN HTML FILE-->
+
+songdetail = """
+
+	<head>
+		<title>Search Detail</title>
+	</head>
+	<body>
+
+		<p> You have selected the chords {{ chord }}. Is this correct?</p>
+		<form action = "/songchord/search_result" method="get">
+			<input type="submit" value="Correct"/>
+		</form>
+
+		<form action = "/songchord/search" method="get">
+			<input type="submit" value="NO, go back!"/>
+		</form>
+
+	</body>
+	"""
+sd = Template(songdetail)
+c = Context({'chord': request.GET['chord']})
+sd.render(c)

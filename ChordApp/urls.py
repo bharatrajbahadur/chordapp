@@ -9,4 +9,5 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
     url(r'^songchord/',include('songchord.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^song_page/',include('songchord.urls')),
 )

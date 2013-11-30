@@ -23,16 +23,17 @@ def search_form(request):
 def search_result(request):
 	if 'chord' in request.GET and request.GET['chord']: 
 		chord = request.GET['chord']
-		songs = Song.objects.filter(chord__name__exact= chord)
+		songs = Song.objects.filter(chord__name__exact=chord)
 		return render(request,'songchord/search_result.html',
-		{'query': chord, 'songs':songs})
+		{'query': chord, 'songs':songs	})
 	
 
 def song_page(request,song_id):
-	songname=Song.objects.get(id=song_id)
+	songname = Song.objects.get(id=song_id)
 	chords = Song.objects.get(id=song_id).chord_set.all()
+
 	return render(request,'songchord/song_page.html',
-	{'chords':chords,'songname':songname
+	{'chords':chords,'songname':songname.title,'artists':songname.artist
 	})
 	
 	#template = loader.get_template('songchord/search_result/song_page.html')
@@ -40,10 +41,11 @@ def song_page(request,song_id):
     #'chords': chords,
     #})
 
-
-
-
-
+def artist_page(request, artist_name):
+	artist=artist_name.strip()
+	songs=Song.objects.filter(artist__exact=artist)
+	return render(request, 'songchord/artist_page.html',
+	{'artist':artist,'songs':songs})
 
 	
 

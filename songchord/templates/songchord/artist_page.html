@@ -1,0 +1,13 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'songchord/styles.css' %}" />
+
+<body class='inputform'>
+{% if songs %}
+    <p style="color:#FF8C00" class='heading'><span>{{ artist }}</span></p>
+    <ul class="all_lists">
+        {% for song in songs %}
+        <li><a href= "{% url 'song_page' song.id %}">{{ song }} </a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+</body>

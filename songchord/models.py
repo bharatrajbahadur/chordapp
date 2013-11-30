@@ -4,9 +4,10 @@ from django.db import models
 class Song(models.Model):
 	title = models.CharField(max_length=200)
 	artist = models.CharField(max_length=200)
-
+	
 	def __unicode__ (self):
 		return self.title
+	
 
 
 class Chord(models.Model):
@@ -15,6 +16,7 @@ class Chord(models.Model):
 
 	def __unicode__(self):
 		return self.name
+
 
 
 

@@ -1,12 +1,15 @@
-<p>You searched for: <strong>{{ query }}</strong></p>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'songchord/styles.css' %}" />
 
+<body class="inputform">
 {% if songs %}
-    <p>Found {{ songs|length }} song{{ songs|pluralize }}.</p>
-    <ul>
+    <p><span>Found {{ songs|length }} song{{ songs|pluralize }} that use the chord <strong>{{ query }}</strong>:</span></p>
+    <ul class="all_lists">
         {% for song in songs %}
-        <li>{{ song }}</li>
+        <span><li><a href= "{% url 'song_page' song.id %}">{{ song }} </a></li></span>
         {% endfor %}
     </ul>
 {% else %}	
     <p>No songs matched your search criteria.</p>
 {% endif %}
+</body>

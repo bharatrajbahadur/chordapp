@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'songchord/styles.css' %}" />
+
+<html>
+<head>
+	<title>song page</title>
+</head>
+
+<body class="inputform"><span>
+	<p> Found {{ chords|length }} chord{{ chords|pluralize }} in <strong>{{ songname }}</strong>:</p>
+	<ul class="all_lists">
+		{% for chord in chords %}
+		<li style="color:#35A3CB;font-weight:900"> {{ chord.name }} </li>
+		{% endfor %}
+	</ul></span>
+</body>
+
+</html>	
+

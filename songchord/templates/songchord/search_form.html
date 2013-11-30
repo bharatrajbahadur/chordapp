@@ -1,23 +1,32 @@
 <!DOCTYPE HTML>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'songchord/styles.css' %}" />
+
 <html>
 <head>
 	<title>Search</title>
 
 </head>
-<body>
+<body class="inputform" >
 	<form action = "/songchord/search_result" method="get">
-		Enter Chords You Know: 
-		<select name='chord'>
+		<h2 > Select the Chord You Know.. </h2>
+		<select name='chord' class="chordselector">
 		  <option value="A">A</option>
 		  <option value="B">B</option>
 		  <option value="C">C</option>
 		  <option value="D">D</option>
 		  <option value="E">E</option>
 		</select>
-	<br/>
-	<input type="submit" value="GO"/>
 
-	</form>
+		<select name='suffix' class="chordselector">
+		  <option value="">None</option>	
+		  <option value="Major">Major</option>
+		  <option value="Minor">Minor</option>
+		</select>
+	<br/>
+	<input type="submit" value="GO"/ class="gobutton">
+
+	</form>	
 	
 </body>
 </html>

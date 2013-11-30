@@ -26,6 +26,24 @@ def search_result(request):
 		songs = Song.objects.filter(chord__name__exact= chord)
 		return render(request,'songchord/search_result.html',
 		{'query': chord, 'songs':songs})
-	else:
-		return HttpResponse('Please enter a chord, you choot')
+	
+
+def song_page(request,song_id):
+	songname=Song.objects.get(id=song_id)
+	chords = Song.objects.get(id=song_id).chord_set.all()
+	return render(request,'songchord/song_page.html',
+	{'chords':chords,'songname':songname
+	})
+	
+	#template = loader.get_template('songchord/search_result/song_page.html')
+    #context = RequestContext(request, {
+    #'chords': chords,
+    #})
+
+
+
+
+
+
+	
 

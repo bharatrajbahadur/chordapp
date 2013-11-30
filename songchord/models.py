@@ -10,11 +10,13 @@ class Song(models.Model):
 
 
 class Chord(models.Model):
-	name = models.CharField(max_length=20)
-	songs = models.ManyToManyField(Song)
+	name= models.CharField(max_length=20)
+	songs= models.ManyToManyField(Song)
 
 	def __unicode__(self):
 		return self.name
+
+
 
 #>>> Song.objects.filter(chord__name__exact='D').filter(chord__name__exact='B')
 #[<Song: Jester Dance>]

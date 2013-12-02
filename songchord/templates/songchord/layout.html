@@ -1,0 +1,19 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+ 		<link rel="stylesheet" type="text/css" href="{% static 'songchord/styles.css' %}" />
+   <!--  <link href="{% static 'songchord/bootstrap.css' %}" rel="stylesheet">
+        <link href="{% static 'songchord/bootstrap-responsive.css' %}" rel="stylesheet">
+        <script type='text/javascript' src="{% static 'songchord/jquery.js' %}"></script>
+        <script type='text/javascript' src="{% static 'songchord/bootstrap.js' %}"></script>
+ -->
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	{% include "songchord/menubar.html" %}
+    {% block content %}{% endblock %}
+	}
+</body>
+</html>
+

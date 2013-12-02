@@ -4,7 +4,7 @@
     position:relative;
     top:-180px;
     left:100px;
-*/
+
 }
 
 .heading{
@@ -37,6 +37,9 @@ div{
     text-align:center;
 }
 
+body{
+    margin:0px;
+}
 
 span{
     position:relative;
@@ -111,5 +114,17 @@ padding-right: .6em;
 margin: 1em 0;
 }
 
-.listlink
+.menubar{
+    color:#FF8C00;
+    height:30px;
+    margin:0px;
+    font-size: 18px;
+    text-align:left;
+    background-color:black;
 
+}
+
+.leftalign{
+    position:relative;
+    
+}

@@ -1,16 +1,14 @@
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'songchord/styles.css' %}" />
-<link href="css/bootstrap.min.css" rel="stylesheet">
+{% extends 'songchord/layout.html' %}
 
 
-<!DOCTYPE HTML>
-<html>
-<head>
-	<title>Welcome</title>
-</head>	
-<body id="intropage">
+{% block title %} Welcome {% endblock %} 
+
+{%block content %}
+
+
+<div id="intropage">
 	<form action = "/songchord/search" method="get">	
-		<h1 class="heading"> Welcome to Easy B#tch </h1> <br/><br/>
+		<h1 class="heading"> Welcome to Ch#rd Play </h1> <br/><br/>
 		<div>
 			<input type="submit" value ="Start App.."/ class="startapp">
 		</div>
@@ -19,5 +17,5 @@
 		</div>
 	</form>
 	
-</body>
-</html>
+</div>
+{% endblock %}
